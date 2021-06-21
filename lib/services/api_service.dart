@@ -4,7 +4,8 @@ import 'dart:async';
 import 'package:untitled/model/article_model.dart';
 
 class ApiService {
-  final endPointUrl = "https://eosmrtnice.ba/wp-json/wp/v2/osmrtnica";
+  final endPointUrl =
+      "https://newsapi.org/v2/everything?q=tesla&from=2021-05-20&sortBy=publishedAt&apiKey=155cbc85b6a14891b13f14ed50581d9c";
 
   Future<List<Article>> getArticle() async {
     Response res = await get(Uri.parse(endPointUrl));
