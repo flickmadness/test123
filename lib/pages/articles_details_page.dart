@@ -34,7 +34,7 @@ class ArticlePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Text(
-                article.source.name,
+                article.title,
                 style: TextStyle(color: Colors.white),
               ),
             ),
