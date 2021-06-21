@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/model/article_model.dart';
 
@@ -9,20 +8,18 @@ class ArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(article.date),
+        title: Text(article.title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: 200.0,
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                image: NetworkImage(article.link),
+                image: NetworkImage(article.urlToImage),
                 fit: BoxFit.cover,
               )),
             ),
@@ -37,7 +34,7 @@ class ArticlePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: Text(
-                article.date,
+                article.source.name,
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -45,7 +42,7 @@ class ArticlePage extends StatelessWidget {
               height: 8.0,
             ),
             Text(
-              article.date,
+              article.title,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0,
